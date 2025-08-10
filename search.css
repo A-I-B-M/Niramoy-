@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f3f6fd 0%, #e1e8ff 100%);
+  color: #1a1a1a;
+}
+
+header {
+  background: #00c6ff;
+  color: white;
+  padding: 1.2rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-weight: 600;
+}
+
+.back-button {
+  background-color: white;
+  color: #00c6ff;
+  border: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e0e7ff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h2.search-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00c6ff;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+h2.search-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 4px;
+  width: 0;
+  background: #21b4dc;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+h2.search-title:hover::after {
+  width: 100%;
+}
+
+.hospital-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.hospital-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hospital-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.3);
+}
+
+.hospital-card h3 {
+  color: #0066ff;
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+}
+
+.hospital-card p {
+  margin: 0.4rem 0;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.hospital-card p strong {
+  color: #1e293b;
+}
+
+.details-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #00c6ff;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.details-btn:hover {
+  background: #3730a3;
+}
+
+.no-results {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #6b7280;
+  padding: 3rem 1rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background: #f9fafb;
+  margin-top: 3rem;
+}
+
+@media (max-width: 480px) {
+  h2.search-title {
+    font-size: 1.5rem;
+  }
+
+  .back-button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}

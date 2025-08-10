@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Niramoy React Inline Test with Ratings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- React + ReactDOM + Babel (to run JSX directly) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // StarRating component to display stars with half star support
+    function StarRating({ rating }) {
+      const fullStars = Math.floor(rating);
+      const halfStar = rating - fullStars >= 0.5;
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+      return (
+        <div className="flex text-yellow-400">
+          {[...Array(fullStars)].map((_, i) => (
+            <span key={'full'+i}>&#9733;</span> // full star ★
+          ))}
+          {halfStar && <span>&#189;</span>}  {/* half star as ½ symbol */}
+          {[...Array(emptyStars)].map((_, i) => (
+            <span key={'empty'+i} className="text-gray-300">&#9733;</span> // empty star ☆ in gray
+          ))}
+        </div>
+      );
+    }
+
+    const hospitals = [
+      {
+        id: 1,
+        name: "GreenLife Hospital",
+        phone_no: "+880123456789",
+        hospital_area: "Dhanmondi",
+        hospital_city: "Dhaka",
+        img: null,
+        avg_rating: 4.6,
+        review_count: 34
+      },
+      {
+        id: 2,
+        name: "Square Hospital",
+        phone_no: "+880987654321",
+        hospital_area: "Panthapath",
+        hospital_city: "Dhaka",
+        img: null,
+        avg_rating: 4.3,
+        review_count: 27
+      }
+    ];
+
+    function HospitalCard({ hospital }) {
+      return (
+        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-xl transition">
+          <img
+            src={
+              hospital.img
+                ? `data:image/jpeg;base64,${hospital.img}`
+                : 'https://via.placeholder.com/300x200'
+            }
+            alt="Hospital"
+            className="w-full h-40 object-cover rounded"
+          />
+          <h3 className="mt-3 text-xl font-bold text-blue-800">{hospital.name}</h3>
+          <p className="text-sm text-gray-600">
+            📍 {hospital.hospital_area}, {hospital.hospital_city}
+          </p>
+          <p className="text-sm text-gray-600">📞 {hospital.phone_no}</p>
+          <div className="flex items-center mt-1">
+            <StarRating rating={hospital.avg_rating} />
+            <span className="ml-2 text-gray-600 text-sm">
+              ({hospital.review_count} reviews)
+            </span>
+          </div>
+          <a
+            href={`patient_hospital/dashboard.php?id=${hospital.id}`}
+            className="text-blue-500 mt-2 inline-block font-medium"
+          >
+            View Details →
+          </a>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <div className="p-4 max-w-5xl mx-auto">
+          <header className="bg-white p-4 shadow flex justify-between items-center">
+            <h1 className="text-2xl font-bold text-blue-700">নিরাময়</h1>
+            <nav className="space-x-4">
+              <a href="#" className="text-gray-700 hover:text-blue-500">Home</a>
+              <a href="#" className="text-gray-700 hover:text-blue-500">Hospitals</a>
+              <a href="#" className="text-gray-700 hover:text-blue-500">Blog</a>
+              <a href="#" className="text-gray-700 hover:text-blue-500">Sample Collection</a>
+            </nav>
+          </header>
+
+          <section className="text-center my-10">
+            <h2 className="text-3xl font-bold">Find the Best Hospitals Near You</h2>
+            <p className="text-gray-600 mb-4">Your health journey starts here</p>
+            <div className="flex justify-center gap-2">
+              <input placeholder="Search hospital or location" className="border px-4 py-2 rounded-lg w-1/2" />
+              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Search</button>
+            </div>
+          </section>
+
+          <section className="mt-10">
+            <h3 className="text-xl font-semibold text-blue-800 mb-4">🏥 Top Featured Hospitals</h3>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {hospitals.map(h => <HospitalCard key={h.id} hospital={h} />)}
+            </div>
+          </section>
+
+          <footer className="text-center text-gray-500 mt-12 py-6 border-t">
+            &copy; 2025 নিরাময়. All rights reserved.
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

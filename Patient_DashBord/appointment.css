@@ -1,0 +1,138 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4f9ff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.sidebar {
+  position: fixed;        
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;          
+  background: #00bfff;
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;           
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sidebar nav ul li.active a,
+.sidebar nav ul li a:hover {
+  background-color: white;
+  color: #00bfff;
+}
+
+.logout-btn {
+  background: white;
+  color: #00bfff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.logout-btn a {
+  text-decoration: none;
+  color: #00bfff;
+}
+
+.main-content {
+  margin-left: 220px;      
+  padding: 40px;
+  min-height: 100vh;       
+  overflow-y: auto;        
+  flex: 1;
+}
+
+.main-content h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #d1d1d1;
+}
+
+.back-btn i {
+  margin-right: 6px;
+}
+.hospital-section {
+  margin-bottom: 30px;
+}
+
+.hospital-section h2 {
+  margin-bottom: 15px;
+  color: #007acc;
+}
+
+.appointment-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.appointment-card p {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;      
+    padding: 20px;
+  }
+}

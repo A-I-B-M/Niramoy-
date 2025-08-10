@@ -1,0 +1,118 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0066ff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, #2e3192, #1bffff);
+}
+
+#h2tag {
+    color: #ffffff;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.sidebar {
+  width: 240px;
+  background-color: #00c6ff;
+  min-height: 100vh;
+  border-right: 1px solid #dee2e6;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h5 {
+  color: #2e3192;
+}
+.navbar {
+  background-color: #00c6ff;
+}
+.sidebar .nav-link {
+  color: #333;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  padding: 12px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: #e0f7ff;
+  color: #2e3192;
+  font-weight: 600;
+}
+
+main.content {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.blog-form-container h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.blog-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.blog-form-container .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-form-container label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.blog-form-container input[type="text"],
+.blog-form-container input[type="file"],
+.blog-form-container textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.blog-form-container input[type="text"]:focus,
+.blog-form-container textarea:focus,
+.blog-form-container input[type="file"]:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0 0 6px rgba(41, 128, 185, 0.4);
+}
+
+.blog-form-container button[type="submit"] {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+  width: 150px;
+  margin-top: 1rem;
+}
+
+.blog-form-container button[type="submit"]:hover {
+  background-color: #1c5980;
+}

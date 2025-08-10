@@ -1,0 +1,72 @@
+
+.table-wrapper {
+  overflow-x: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background-color: #f1f1f1;
+}
+
+thead th {
+  padding: 12px;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.edit-btn, .delete-btn, .add-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.edit-btn {
+  background-color: #2980b9;
+  margin-right: 5px;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+}
+
+.add-btn {
+  background-color: #00c6ff;
+  margin-top: 20px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.add-btn i {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}
